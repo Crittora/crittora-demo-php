@@ -1,0 +1,18 @@
+{
+    "name": "crittora/crittora-sdk-php-demo",
+    "autoload": {
+        "psr-4": {
+            "Crittora\\CrittoraSdkPhpDemo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gerardo I. Ornelas",
+            "email": "gerardo@crittora.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "wutif/crittora-sdk-php": "^1.0"
+    }
+}
