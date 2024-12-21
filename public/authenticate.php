@@ -1,17 +1,9 @@
 <?php
 
 require_once '../vendor/autoload.php'; // Adjust the path as necessary
+require __DIR__ . '/envLoader.php'; // Adjusted path to include the missing slash
 
-use Dotenv\Dotenv;
-
-// Correct the path to the .env file at the root directory
-$dotenv = Dotenv::createImmutable(__DIR__ . '/..');
-$dotenv->load();
-
-// Add these lines
-foreach ($_ENV as $key => $value) {
-    putenv("$key=$value");
-}
+loadEnvironmentVariables(__DIR__ . '/../');
 
 use Crittora\CrittoraSDK;
 

@@ -1,17 +1,9 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php'; // Load Composer autoload
+require __DIR__ . '/envLoader.php'; // Adjusted path to include the missing slash
 
-use Dotenv\Dotenv;
-
-// Load environment variables
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
-$dotenv->load();
-
-// Add these lines
-foreach ($_ENV as $key => $value) {
-    putenv("$key=$value");
-}
+loadEnvironmentVariables(__DIR__ . '/../');
 
 // Validate required environment variables
 $requiredVars = ['CRITTORA_USERNAME', 'CRITTORA_PASSWORD', 'AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY'];
