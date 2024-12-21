@@ -34,34 +34,37 @@ $password = getenv('CRITTORA_PASSWORD');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <title>Crittora SDK Demo</title>
 </head>
 <body>
-    <h1>Crittora SDK Demo</h1>
-    <p id="timestamp"></p>
-    <div>
-        <h2>Authenticate</h2>
-        <input type="text" id="username" placeholder="Username" value="<?php echo htmlspecialchars($username); ?>">
-        <input type="password" id="password" placeholder="Password" value="<?php echo htmlspecialchars($password); ?>">
-        <button onclick="authenticate()">Authenticate</button>
-        <p id="tokenDisplay"></p>
-    </div>
-    <div>
-        <h2>Encrypt Data</h2>
-        <input type="text" id="dataToEncrypt" placeholder="Data to encrypt">
-        <button onclick="encryptData()">Encrypt</button>
-        <p id="encryptMessage"></p>
-    </div>
-    <div class="results">
-        <label>Encrypted Result:</label>
-        <pre id="encryptedResult"></pre>
-    </div>
-    <div>
-        <h2>Decrypt Data</h2>
-        <input type="text" id="encryptedData" placeholder="Encrypted data">
-        <button onclick="decryptData()">Decrypt</button>
-        <p id="decryptMessage"></p>
+    <div class="container">
+        <h1 class="mt-5">Crittora SDK Demo</h1>
+        <p id="timestamp"></p>
+        <div class="mb-4">
+            <h2>Authenticate</h2>
+            <input type="text" id="username" class="form-control" placeholder="Username" value="<?php echo htmlspecialchars($username); ?>">
+            <input type="password" id="password" class="form-control" placeholder="Password" value="<?php echo htmlspecialchars($password); ?>">
+            <button class="btn btn-primary mt-2" onclick="authenticate()">Authenticate</button>
+            <p id="tokenDisplay"></p>
+        </div>
+        <div class="mb-4">
+            <h2>Encrypt Data</h2>
+            <input type="text" id="dataToEncrypt" class="form-control" placeholder="Data to encrypt">
+            <button class="btn btn-success mt-2" onclick="encryptData()">Encrypt</button>
+            <p id="encryptMessage"></p>
+        </div>
+        <div class="results">
+            <label>Encrypted Result:</label>
+            <pre id="encryptedResult"></pre>
+        </div>
+        <div class="mb-4">
+            <h2>Decrypt Data</h2>
+            <input type="text" id="encryptedData" class="form-control" placeholder="Encrypted data">
+            <button class="btn btn-danger mt-2" onclick="decryptData()">Decrypt</button>
+            <p id="decryptMessage"></p>
+        </div>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
