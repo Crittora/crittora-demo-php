@@ -19,7 +19,7 @@ This project is a demonstration of how to use the Crittora SDK for PHP. It provi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/crittora-demo-php.git
+   git clone https://github.com/Crittora/crittora-demo-php.git
    cd crittora-demo-php
    ```
 
