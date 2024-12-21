@@ -13,6 +13,15 @@ foreach ($_ENV as $key => $value) {
     putenv("$key=$value");
 }
 
+// Validate required environment variables
+$requiredVars = ['CRITTORA_USERNAME', 'CRITTORA_PASSWORD', 'AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY'];
+foreach ($requiredVars as $var) {
+    if (!getenv($var)) {
+        error_log("$var is missing");
+        throw new Exception("$var environment variable is not set.");
+    }
+}
+
 // Get username and password from environment variables
 $username = getenv('CRITTORA_USERNAME');
 $password = getenv('CRITTORA_PASSWORD');
@@ -79,14 +88,14 @@ $password = getenv('CRITTORA_PASSWORD');
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    console.log('Authentication successful');
+                    console.log('index.php : Authentication successful');
                     idToken = data.IdToken;
                     document.getElementById('tokenDisplay').textContent = `IdToken: ${idToken}`;
                 } else {
-                    console.error('Authentication failed:', data.error);
+                    console.error('index.php : Authentication failed :', data.error);
                 }
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => console.error('index.php : Error:', error));
         }
 
         function encryptData() {
