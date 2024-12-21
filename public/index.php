@@ -49,13 +49,22 @@ $password = getenv('CRITTORA_PASSWORD');
         </div>
         <div class="results">
             <label>Encrypted Result:</label>
+            <div class="flex-container justify-content-start">
             <pre id="encryptedResult"></pre>
+            <div id="spinner" class="spinner-grow" role="status" style="display: none;">
+                <span class="sr-only">Loading...</span>
+            </div>
+            </div>
+          
         </div>
         <div class="mb-4">
             <h2>Decrypt Data</h2>
             <input type="text" id="encryptedData" class="form-control" placeholder="Encrypted data">
             <button class="btn btn-danger mt-2" onclick="decryptData()">Decrypt</button>
             <p id="decryptMessage"></p>
+            <div id="spinner-decrypt" class="spinner-grow" role="status" style="display: none;">
+                <span class="sr-only">Loading...</span>
+            </div>
         </div>
     </div>
     <script>
@@ -94,6 +103,8 @@ $password = getenv('CRITTORA_PASSWORD');
         }
 
         function encryptData() {
+            // Show the spinner when encryption starts
+            document.getElementById('spinner').style.display = 'block'; // Show spinner
 
             const data = document.getElementById('dataToEncrypt').value;
             const permissions = ['read', 'write']; // Example permissions
@@ -111,6 +122,8 @@ $password = getenv('CRITTORA_PASSWORD');
             .then(data => {
                 const messageElement = document.getElementById('encryptMessage');
                 const encryptedDataDisplay = document.getElementById('encryptedResult');
+                // Hide the spinner when encryption is done
+                document.getElementById('spinner').style.display = 'none'; // Hide spinner
                 if (data.success) {
                     console.log('Encrypted data:', data.encryptedData);
                     messageElement.textContent = 'Encryption successful!';
@@ -125,10 +138,15 @@ $password = getenv('CRITTORA_PASSWORD');
                 console.error('Error:', error);
                 document.getElementById('encryptMessage').textContent = `Error: ${error}`;
                 document.getElementById('encryptedResult').textContent = ''; // Clear display on error
+                // Hide the spinner on error
+                document.getElementById('spinner').style.display = 'none'; // Hide spinner
             });
         }
 
         function decryptData() {
+            // Show the spinner when encryption starts
+            document.getElementById('spinner-decrypt').style.display = 'block'; // Show spinner
+
             const encryptedData = document.getElementById('encryptedData').value;
             const permissions = ['read']; // Example permissions
             console.log('idToken: ', idToken);
@@ -144,6 +162,8 @@ $password = getenv('CRITTORA_PASSWORD');
             .then(response => response.json())
             .then(data => {
                 const messageElement = document.getElementById('decryptMessage');
+                // Hide the spinner when encryption is done
+                document.getElementById('spinner-decrypt').style.display = 'none'; // Hide spinner
                 if (data.success) {
                     console.log('Decrypted data:', data.decryptedData);
                     messageElement.textContent = `Decryption successful! Data: ${data.decryptedData}`;
