@@ -1282,16 +1282,16 @@
         },
         {
             "name": "wutif/crittora-sdk-php",
-            "version": "v1.0.2",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Crittora/crittora-sdk-php.git",
-                "reference": "b886159a5a549e657aabce375172d9a293603a4e"
+                "reference": "df4d5ef6e8fbb20e36457091626bc0d353741929"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Crittora/crittora-sdk-php/zipball/b886159a5a549e657aabce375172d9a293603a4e",
-                "reference": "b886159a5a549e657aabce375172d9a293603a4e",
+                "url": "https://api.github.com/repos/Crittora/crittora-sdk-php/zipball/df4d5ef6e8fbb20e36457091626bc0d353741929",
+                "reference": "df4d5ef6e8fbb20e36457091626bc0d353741929",
                 "shasum": ""
             },
             "require": {
@@ -1316,9 +1316,9 @@
             "description": "Crittora SDK for PHP",
             "support": {
                 "issues": "https://github.com/Crittora/crittora-sdk-php/issues",
-                "source": "https://github.com/Crittora/crittora-sdk-php/tree/v1.0.2"
+                "source": "https://github.com/Crittora/crittora-sdk-php/tree/v1.0.7"
             },
-            "time": "2024-12-20T19:09:24+00:00"
+            "time": "2024-12-22T16:08:10+00:00"
         }
     ],
     "packages-dev": [],

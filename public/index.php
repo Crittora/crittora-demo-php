@@ -6,7 +6,7 @@ require __DIR__ . '/envLoader.php'; // Adjusted path to include the missing slas
 loadEnvironmentVariables(__DIR__ . '/../');
 
 // Validate required environment variables
-$requiredVars = ['CRITTORA_USERNAME', 'CRITTORA_PASSWORD', 'AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY'];
+$requiredVars = ['CRITTORA_CLIENT_ID', 'CRITTORA_USERNAME', 'CRITTORA_PASSWORD', 'CRITTORA_API_KEY', 'CRITTORA_ACCESS_KEY', 'CRITTORA_SECRET_KEY'];
 foreach ($requiredVars as $var) {
     if (!getenv($var)) {
         error_log("$var is missing");
