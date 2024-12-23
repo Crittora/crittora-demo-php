@@ -37,7 +37,7 @@ This project is a demonstration of how to use the Crittora SDK for PHP. It provi
    CRITTORA_PASSWORD=your_password
    CRITTORA_API_KEY=your_api_key
    CRITTORA_ACCESS_KEY=your_access_key
-   CRITTORA_SECRET_ACCESS=your_secret_key
+   CRITTORA_SECRET_KEY=your_secret_key
    ```
 
 4. Start a local PHP server:
