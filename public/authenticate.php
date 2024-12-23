@@ -21,5 +21,6 @@ try {
     $authResponse = $sdk->authenticate($username, $password);
     echo json_encode(['success' => true, 'IdToken' => $authResponse['IdToken']]);
 } catch (Exception $e) {
+    http_response_code(401);
     echo json_encode(['success' => false, 'error' => $e->getMessage()]);
 }
