@@ -97,6 +97,7 @@ $password = getenv('CRITTORA_PASSWORD');
                     document.getElementById('tokenDisplay').textContent = `IdToken: ${idToken}`;
                 } else {
                     console.error('index.php : Authentication failed :', data.error);
+                    document.getElementById('tokenDisplay').textContent = `Error: ${data.error}`;
                 }
             })
             .catch(error => console.error('index.php : Error:', error));
